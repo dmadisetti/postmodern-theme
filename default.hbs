@@ -23,6 +23,7 @@
     {{! Styles'n'Scripts }}
     <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
     <link rel="stylesheet" type="text/css" href="{{asset "css/desert.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "fonts/octicons/octicons.css"}}" />
     <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
 
     <script type="text/javascript">
@@ -41,7 +42,6 @@
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
 
-    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
 </head>
 
 <body class="{{body_class}}">
@@ -64,6 +64,8 @@
         </div>
 
     </header>
+
+    <!-- Got the idea for the sidebar from the phantom theme -->
     <div class="side-nav-bg none" id="side-bg"></div>
     <div class="side-nav fade" id="side">
         {{#if @blog.logo}}
@@ -119,12 +121,9 @@
         {{/if}}
 
         <!-- Footer Social Icons --> 
-        <div class="footer-social-icons">
-            <a href="http://www.facebook.com/"><i class="fa fa-facebook fa-2x"></i></a>
-            <a href="http://www.twitter.com/"><i class="fa fa-twitter fa-2x"></i></a>
-            <a href="https://github.com/"><i class="fa fa-github fa-2x"></i></a>
-            <a href="https://plus.google.com"><i class="fa fa-google-plus fa-2x"></i></a>
-            <a href="http://phantom2-rupok.rhcloud.com/rss"><i class="fa fa-rss fa-2x"></i></a>
+        <div class="footer-social">
+            <a href="https://github.com/dmadisetti/postmodern-theme"><i class="octicon octicon-mark-github"></i></a>
+            <a href="/rss"><i class="octicon octicon-rss"></i></a>
         </div> 
     </div>
 
@@ -141,9 +140,10 @@
     {{! Ghost outputs important scripts and data with this tag }}
     {{ghost_foot}}
 
-    {{! The main JavaScript file for Casper }}
-    <script type="text/javascript" src="{{asset "js/StackBlur.js"}}"></script>
+    {{! The main JavaScript file for Postmodern }}
     <script type="text/javascript" src="{{asset "js/the.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/StackBlur.js"}}"></script>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
 
 </body>
 </html>

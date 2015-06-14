@@ -4,6 +4,8 @@
 
 /*
 
+    Scrapped, then edited from Casper. There are some really weird things in here that aren't me
+
     0.  Normalize
     1.  Icons
     2.  General
@@ -468,7 +470,7 @@ margin on the iframe, cause it breaks stuff. */
     margin: 0;
 }
 
-a, #side, #fixed, #posts, #side-bg, .inner-slider{
+a, #side, #fixed, #posts, #side-bg, .inner-slider, .footer-social {
   color: inherit;
   -webkit-transition: all ease 0.3s;
   -moz-transition: all ease 0.3s;
@@ -1487,6 +1489,10 @@ body.nav-opened .nav {
     border-right: 0px; 
 }
 
+.fade .footer-social{
+    margin-left: -300px;
+}
+
 a.author-by {
     line-height: 45px;
 }
@@ -1656,6 +1662,18 @@ time {
 
 main {
     background-color: #fff;
+}
+
+.footer-social {
+    background-color: #2d3034;
+    border-top: 1px solid #333;
+    bottom: 0;
+    box-sizing: border-box;
+    color: #666;
+    left: 0;
+    padding: 10px;
+    position: fixed;
+    width: 299px;
 }
 
 /* ==========================================================================
