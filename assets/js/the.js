@@ -104,7 +104,7 @@
                     startView();
                 }
                 break;
-            case x <= 1250 && x >= 924:
+            case x >= 450:
                 if(view != tablet){
                     view = tablet;
                     startView();

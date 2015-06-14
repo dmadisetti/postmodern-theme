@@ -691,6 +691,10 @@ body.nav-opened .nav {
     width: auto;
 }
 
+.post-title {
+    z-index: -1;
+}
+
 .post-title a {
     text-decoration: none;
 }
