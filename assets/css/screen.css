@@ -1495,6 +1495,7 @@ body.nav-opened .nav {
 
 a.author-by {
     line-height: 45px;
+    text-decoration: none;
 }
 
 .logo {
