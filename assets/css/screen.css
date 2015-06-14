@@ -1212,6 +1212,7 @@ body.nav-opened .nav {
 .site-footer {
     bottom: 0;
     box-sizing: border-box;
+    background-color: #fff;
     color: #BBC7CC;
     display: inline;
     font-family: "Open Sans", sans-serif;
@@ -1408,6 +1409,10 @@ body.nav-opened .nav {
 
 .pagination {
     text-align: center;
+}
+
+.pagination a{
+    margin: 10px;
 }
 
 .side-nav{
@@ -1682,11 +1687,16 @@ main {
     left: 0;
     padding: 10px;
     position: fixed;
+    text-align: center;
     width: 299px;
 }
 
 #disqus_thread {
     margin: 0 auto; 
+}
+
+.page-number + .older-posts {
+    margin-bottom: 60px;
 }
 
 /* ==========================================================================
@@ -2115,6 +2125,10 @@ main {
         letter-spacing: 0px;
     }
 
+    .header-title {
+        font-size: 48px;
+    }
+
     header h1{
         font-size:4.0em;
     }
@@ -2136,6 +2150,15 @@ main {
 
     header h1{
         font-size:3.0em;
+    }
+
+    .title {
+        font-size: 15px;
+        letter-spacing: 0px;
+    }
+
+    .header-title {
+        font-size: 32px;
     }
 
     .header{

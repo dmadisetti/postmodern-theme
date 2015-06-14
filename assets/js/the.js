@@ -64,7 +64,7 @@
     };
     View.prototype.initHome = function(){
         size = 450;
-        this._scroll = function(){
+        this._scroll = function(x){
             if(window._postmodern.hasLogo) this.parallaxlogo.style.top = (document.documentElement.getBoundingClientRect().top/2) + "px";
             if(window._postmodern.author) this.parallaxlogo.style.top = (document.documentElement.getBoundingClientRect().top/2) + "px";
             this.parallaxfast.style.top = (document.documentElement.getBoundingClientRect().top/3) + "px";
@@ -137,12 +137,14 @@
     */
     
     window.onresize = function(event) {
-        if(banner) cover();
+        cover();
         setView(window.innerWidth);
+        if(view != mobile)
         view._scroll(document.documentElement.scrollTop);
     }
     
     window.onscroll = function(event) {
+        if(view != mobile)
         view._scroll(document.documentElement.scrollTop);
     }
     
@@ -153,6 +155,8 @@
     
     var cover = function(){
     
+        if(!banner) return;
+
         // Get the height and width for these guys
         var height = size < banner.height ? size : banner.height,
             width = document.body.scrollWidth < banner.width ? document.body.scrollWidth : banner.width;
@@ -187,9 +191,8 @@
         }
     }
 
-    if(banner){
-        banner.onload = cover;
-        canvas.onresize = cover;
-        window.onload = cover;
-    }
+    banner.onload = cover;
+    canvas.onresize = cover;
+    window.onload = cover;
+
 })()
