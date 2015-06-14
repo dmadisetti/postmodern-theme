@@ -4,14 +4,14 @@
     {{#if author}}
         <canvas class="banner" id="banner">
             {{#if author.cover}}
-                <img class="excerpt-image" id="banner-img" src="{{author.cover}}" alt="{{@blog.title}}" nopin="nopin" />
+                <img class="excerpt-image" id="banner-img" src="{{author.cover}}" alt="{{@blog.title}}" />
             {{else}}
-                <img class="excerpt-image" id="banner-img" src="{{author.image}}" alt="{{@blog.title}}" nopin="nopin" />
+                <img class="excerpt-image" id="banner-img" src="{{author.image}}" alt="{{@blog.title}}" />
             {{/if}}
         </canvas>
     {{else}}
         {{#if @blog.cover}}
-            <canvas class="banner" id="banner"><img class="excerpt-image" id="banner-img" src="{{@blog.cover}}" alt="{{@blog.title}}" nopin="nopin" /></canvas>
+            <canvas class="banner" id="banner"><img class="excerpt-image" id="banner-img" src="{{@blog.cover}}" alt="{{@blog.title}}" /></canvas>
         {{/if}}
     {{/if}}
     <div class="centered fixed grow" id="fixed">

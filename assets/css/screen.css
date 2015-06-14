@@ -1328,17 +1328,18 @@ body.nav-opened .nav {
 }
 
 .inner-slider {
-  box-sizing: border-box;
-  display: inline-block;
-  height: 100%;
-  left: 0;
-  max-height: 500px;
-  overflow-y: scroll;
-  margin-top: 300px;
-  padding-bottom: 300px;
-  position: fixed;
-  top: 0;
-  width: 300px;
+    box-sizing: border-box;
+    display: inline-block;
+    height: 100%;
+    left: 0;
+    max-height: 500px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-top: 300px;
+    padding-bottom: 300px;
+    position: fixed;
+    top: 0;
+    width: 300px;
 }
 
 ::-webkit-scrollbar {
@@ -1659,6 +1660,17 @@ time {
 
 .post-excerpt a{
     text-decoration: underline;
+}
+
+.post {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 10px; 
+}
+
+.post-side {
+    width: 280px;
+    box-sizing: border-box;
 }
 
 main {
@@ -2048,21 +2060,15 @@ main {
 
 }
 
-.post{
-    display: inline-block;
-    margin: 0 auto;
-    padding: 10px; 
-}
-
 /* Woohoo! Media queries */
 @media (min-width: 1250px){
-    section{
+    section,.section{
         max-width:1090px;
     }
 }
 
 @media (max-width: 1249px) and (min-width: 925px){
-    section{
+    section,.section{
         max-width:1090px;
     }
 }
@@ -2076,7 +2082,7 @@ main {
         margin:0 auto;
         text-align: center;
     }
-    section,footer,#navigation {
+    section,footer,#navigation,.section {
         max-width:100%;
     }
 

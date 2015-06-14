@@ -87,24 +87,27 @@
                 {{/foreach}}
             </ul>
                 {{#foreach posts}}
-                <article class="post clearfix first">
+                <article class="post post-side clearfix first">
                     <div class="pull-left gutter">
                         <a class="post-slider" href="{{url}}">
-                            <img class="side-img" src="{{image}}">
+                            <img class="side-img" src="{{image}}" alt="{{title}}">
                         </a>
                     </div>
                     <div class="article-content-wrapper">
                       <div class="article-content">
-                        <h1 class="article-title">
+                        <h2 class="article-title">
                           <a class="post-slider" href="{{url}}">{{excerpt words="26"}}</a>
-                        </h1>
+                        </h2>
                       </div>
                       <footer>
                         <div class="article-shares-stub">
-                            <div class="pull-left">
-                            <b>478</b>
-                            views
-                            </div>
+                            <!--
+                                If we could tabulate views some how
+                                <div class="pull-left">
+                                    <b>478</b>
+                                    views
+                                </div>
+                            -->
                             <time class="pull-left side-time" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
                         </div>
                       </footer>
