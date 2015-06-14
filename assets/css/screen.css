@@ -67,7 +67,7 @@ sub, sup {
 }
 sup { top: -0.5em; }
 sub { bottom: -0.25em; }
-img { border: 0; width: 100%;}
+img { border: 0; max-width: 100%;}
 svg:not(:root) { overflow: hidden; }
 figure { margin: 0; }
 fieldset {
