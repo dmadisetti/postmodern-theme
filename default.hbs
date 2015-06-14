@@ -90,7 +90,11 @@
                 <article class="post post-side clearfix first">
                     <div class="pull-left gutter">
                         <a class="post-slider" href="{{url}}">
-                            <img class="side-img" src="{{image}}" alt="{{title}}">
+                            {{#if image}}
+                                <img class="side-img" src="{{image}}" alt="{{title}}">
+                            {{else}}
+                                <img class="side-img" src="{{author.image}}" alt="{{title}}">
+                            {{/if}}
                         </a>
                     </div>
                     <div class="article-content-wrapper">
