@@ -1,0 +1,36 @@
+<div class="zigzag">
+
+    <span class="damp"></span>
+    {{#if author}}
+        <canvas class="banner" id="banner">
+            {{#if author.cover}}
+                <img class="excerpt-image" id="banner-img" src="{{author.cover}}" alt="{{@blog.title}}" nopin="nopin" />
+            {{else}}
+                <img class="excerpt-image" id="banner-img" src="{{author.image}}" alt="{{@blog.title}}" nopin="nopin" />
+            {{/if}}
+        </canvas>
+    {{else}}
+        {{#if @blog.cover}}
+            <canvas class="banner" id="banner"><img class="excerpt-image" id="banner-img" src="{{@blog.cover}}" alt="{{@blog.title}}" nopin="nopin" /></canvas>
+        {{/if}}
+    {{/if}}
+    <div class="centered fixed grow" id="fixed">
+
+            {{#if author}}
+                    <figure class="author-image parallax parallax-logo">
+                        <a class="author-link" href="{{author.url}}"> <img src="{{author.image}}" class="author-src" alt="{{author.name}}'s Picture"></a>
+                    </figure>
+            {{else}}
+                {{#if @blog.logo}}<img  src="{{@blog.logo}}" class='blog-logo parallax parallax-logo' />{{/if}}
+            {{/if}}
+
+            <h1 class= "parallax parallax-fast header-title">{{#if author}}{{author.name}}{{else}}{{@blog.title}}{{/if}}</h1>
+            <h2 class= "parallax parallax-med under-title">{{#if author}}{{author.bio}}{{else}}{{@blog.description}}{{/if}}</h2>
+            <div class="parallax parallax-slow hrs hr-head">
+                <div class="hr red"></div>
+                <div class="hr green"></div>
+                <div class="hr blue"></div>
+            </div>
+    </div>
+
+</div>

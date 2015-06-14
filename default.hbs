@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    {{! Document Settings }}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>{{@blog.title}}</title>
+
+    <meta name="viewport" content="width=device-width" />
+    <meta name="HandheldFriendly" content="True" />
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans|Lato:100' rel='stylesheet' type='text/css'>
+
+    <!--Who am I?-->
+    <link rel="author" href="https://plus.google.com/u/0/105709266649393713479/" />
+    <link rel="twitter" href="https://twitter.com/dylanmadisetti" />
+
+    <link type="text/plain" rel="author" href="/humans.txt" />
+    <link rel="profile" href="http://gmpg.org/xfn/11" />
+
+    {{! Styles'n'Scripts }}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/desert.css"}}" />
+    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+
+    <script type="text/javascript">
+
+    window._postmodern = {
+
+        hasLogo: {{#if @blog.logo}}true{{else}}false{{/if}},
+        author:  {{#if author}}true{{else}}false{{/if}},
+        post:    {{#if post}}true{{else}}false{{/if}},
+        tag:     {{#if tag}}true{{else}}false{{/if}},
+
+    }
+
+    </script>
+
+    {{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+</head>
+
+<body class="{{body_class}}">
+
+    {{! navigation}}
+
+    <header class="bar clearfix">
+        <!-- Product Switcher -->
+        <div class="hamburger head pull-left" id="toggle">
+            <a href="#" title="Expand Menu">=</a>
+        </div>
+
+        <!-- Logo -->
+        <div class="pull-left head">
+            <h1>
+                <a href="/" class="title" title="{{@blog.title}}">
+                    {{@blog.title}}
+                </a>
+            </h1>
+        </div>
+
+    </header>
+    <div class="side-nav-bg none" id="side-bg"></div>
+    <div class="side-nav fade" id="side">
+        {{#if @blog.logo}}
+        <img  src="{{@blog.logo}}" class='description' />
+        {{else}}
+        <p class='description'>{{@blog.description}}</p>
+        {{/if}}
+        <div class="hrs">
+            <div class="hr red"></div>
+            <div class="hr green"></div>
+            <div class="hr blue"></div>
+        </div>
+
+        {{#if posts}}
+        <div class="inner-slider">
+            <ul>
+                {{#foreach navigation}}
+                    <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
+                {{/foreach}}
+            </ul>
+                {{#foreach posts}}
+                <article class="post clearfix first">
+                    <div class="pull-left gutter">
+                        <a class="post-slider" href="{{url}}">
+                            <img class="side-img" src="{{image}}">
+                        </a>
+                    </div>
+                    <div class="article-content-wrapper">
+                      <div class="article-content">
+                        <h1 class="article-title">
+                          <a class="post-slider" href="{{url}}">{{excerpt words="26"}}</a>
+                        </h1>
+                      </div>
+                      <footer>
+                        <div class="article-shares-stub">
+                            <div class="pull-left">
+                            <b>478</b>
+                            views
+                            </div>
+                            <time class="pull-left side-time" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+                        </div>
+                      </footer>
+                    </div>
+                </article>
+                {{/foreach}}
+        </div>
+        {{else}}
+        <ul>
+            {{#foreach navigation}}
+                <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
+            {{/foreach}}
+        </ul>
+        {{/if}}
+
+        <!-- Footer Social Icons --> 
+        <div class="footer-social-icons">
+            <a href="http://www.facebook.com/"><i class="fa fa-facebook fa-2x"></i></a>
+            <a href="http://www.twitter.com/"><i class="fa fa-twitter fa-2x"></i></a>
+            <a href="https://github.com/"><i class="fa fa-github fa-2x"></i></a>
+            <a href="https://plus.google.com"><i class="fa fa-google-plus fa-2x"></i></a>
+            <a href="http://phantom2-rupok.rhcloud.com/rss"><i class="fa fa-rss fa-2x"></i></a>
+        </div> 
+    </div>
+
+
+        {{! Everything else gets inserted here }}
+    <div class="posts grow" id="posts">
+        {{{body}}}
+    </div>
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
+        <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+    </footer>
+
+    {{! Ghost outputs important scripts and data with this tag }}
+    {{ghost_foot}}
+
+    {{! The main JavaScript file for Casper }}
+    <script type="text/javascript" src="{{asset "js/StackBlur.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/the.js"}}"></script>
+
+</body>
+</html>
