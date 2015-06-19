@@ -2103,6 +2103,13 @@ main {
         max-width:100%;
     }
 
+    section,footer,#navigation,.section {
+        max-width:100%;
+    }
+
+    #disqus_thread {
+        margin: 0 10px;
+    }
 }
 
 @media (max-width: 767px){
