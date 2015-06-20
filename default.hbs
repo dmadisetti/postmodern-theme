@@ -39,6 +39,22 @@
 
     </script>
 
+    <!-- MathJax and Charts. Kind of a must -->
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">  
+    MathJax.Hub.Config({  
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+    </script>
+    <script type="text/javascript"
+        src="https://www.google.com/jsapi?autoload={
+            'modules':[{
+                'name':'visualization',
+                'version':'1',
+                'packages':['corechart']
+            }]
+        }"></script>
+
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
 
