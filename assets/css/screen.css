@@ -1716,6 +1716,10 @@ blockquote p strong {
     font-size: 1.5em;
 }
 
+iframe.span {
+    width: 100%;
+}
+
 /* ==========================================================================
    12. Media Queries - Smaller than 900px
    ========================================================================== */
@@ -1732,7 +1736,7 @@ blockquote p strong {
         box-sizing: border-box;
         height: auto;
         min-height: 240px;
-        height: 60vh;
+        height: 60px;
         padding: 15% 0;
     }
 
