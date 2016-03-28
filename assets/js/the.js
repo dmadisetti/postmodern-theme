@@ -191,7 +191,7 @@
         }
     }
 
-    banner.onload = cover;
+    if(banner) banner.onload = cover;
     canvas.onresize = cover;
     window.onload = cover;
 
