@@ -1701,6 +1701,14 @@ main {
     margin: 0 auto; 
 }
 
+#disqus_thread > iframe {
+    margin: 0;
+}
+
+#disqus_container {
+    background-color: #fff;
+}
+
 .page-number + .older-posts {
     margin-bottom: 60px;
 }
